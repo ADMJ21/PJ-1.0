@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 9/10/2024 09:47:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJOS.Cliente" table="cliente" catalog="bd_finalproject" optimistic-lock="version">
+        <id name="idCliente" type="java.lang.Integer">
+            <column name="id_Cliente" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreCliente" type="string">
+            <column name="Nombre_Cliente" length="45" />
+        </property>
+        <property name="telefonoCliente" type="string">
+            <column name="Telefono_Cliente" length="25" />
+        </property>
+        <property name="emailCliente" type="string">
+            <column name="Email_Cliente" length="45" />
+        </property>
+        <property name="edad" type="java.lang.Integer">
+            <column name="Edad" />
+        </property>
+        <property name="estados" type="java.lang.Boolean">
+            <column name="Estados" />
+        </property>
+        <set name="prestamoses" table="prestamos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Cliente" />
+            </key>
+            <one-to-many class="POJOS.Prestamos" />
+        </set>
+    </class>
+</hibernate-mapping>
