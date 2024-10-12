@@ -10,5 +10,8 @@ package CRUDS;
  * @author Angel
  */
 public class CRUDCliente {
-   System.out.println ("Helow Wrold");
+   int num1=0;
+   
+    System.out.println ("Helow Wrold");
+   num1=++;
 }
