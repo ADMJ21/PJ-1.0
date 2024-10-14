@@ -1,5 +1,5 @@
 package POJOS;
-// Generated 9/10/2024 09:47:58 PM by Hibernate Tools 4.3.1
+// Generated 13/10/2024 07:11:05 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -22,8 +22,7 @@ public class Cliente  implements java.io.Serializable {
     public Cliente() {
     }
 
-    public Cliente(Integer idCliente, String nombreCliente, String telefonoCliente, String emailCliente, Integer edad, Boolean estados, Set<Prestamos> prestamoses) {
-       this.idCliente = idCliente;
+    public Cliente(String nombreCliente, String telefonoCliente, String emailCliente, Integer edad, Boolean estados, Set<Prestamos> prestamoses) {
        this.nombreCliente = nombreCliente;
        this.telefonoCliente = telefonoCliente;
        this.emailCliente = emailCliente;

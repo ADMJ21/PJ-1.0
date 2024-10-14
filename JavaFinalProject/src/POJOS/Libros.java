@@ -1,5 +1,5 @@
 package POJOS;
-// Generated 9/10/2024 09:47:58 PM by Hibernate Tools 4.3.1
+// Generated 13/10/2024 07:11:05 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -12,19 +12,20 @@ public class Libros  implements java.io.Serializable {
 
 
      private Integer idLibros;
+     private String nombre;
      private String genero;
-     private Integer cantidad;
      private Boolean estado;
+     private String categoria;
      private Set<Prestamos> prestamoses = new HashSet<Prestamos>(0);
 
     public Libros() {
     }
 
-    public Libros(Integer idLibros, String genero, Integer cantidad, Boolean estado, Set<Prestamos> prestamoses) {
-       this.idLibros = idLibros;
+    public Libros(String nombre, String genero, Boolean estado, String categoria, Set<Prestamos> prestamoses) {
+       this.nombre = nombre;
        this.genero = genero;
-       this.cantidad = cantidad;
        this.estado = estado;
+       this.categoria = categoria;
        this.prestamoses = prestamoses;
     }
    
@@ -35,6 +36,13 @@ public class Libros  implements java.io.Serializable {
     public void setIdLibros(Integer idLibros) {
         this.idLibros = idLibros;
     }
+    public String getNombre() {
+        return this.nombre;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     public String getGenero() {
         return this.genero;
     }
@@ -42,19 +50,19 @@ public class Libros  implements java.io.Serializable {
     public void setGenero(String genero) {
         this.genero = genero;
     }
-    public Integer getCantidad() {
-        return this.cantidad;
-    }
-    
-    public void setCantidad(Integer cantidad) {
-        this.cantidad = cantidad;
-    }
     public Boolean getEstado() {
         return this.estado;
     }
     
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+    public String getCategoria() {
+        return this.categoria;
+    }
+    
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
     public Set<Prestamos> getPrestamoses() {
         return this.prestamoses;

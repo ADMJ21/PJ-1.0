@@ -1,21 +1,24 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 9/10/2024 09:47:58 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 13/10/2024 07:11:05 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="POJOS.Libros" table="libros" catalog="bd_finalproject" optimistic-lock="version">
         <id name="idLibros" type="java.lang.Integer">
             <column name="id_Libros" />
             <generator class="identity" />
         </id>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="80" />
+        </property>
         <property name="genero" type="string">
             <column name="Genero" length="80" />
         </property>
-        <property name="cantidad" type="java.lang.Integer">
-            <column name="Cantidad" />
-        </property>
         <property name="estado" type="java.lang.Boolean">
             <column name="Estado" />
+        </property>
+        <property name="categoria" type="string">
+            <column name="Categoria" length="80" />
         </property>
         <set name="prestamoses" table="prestamos" inverse="true" lazy="true" fetch="select">
             <key>
