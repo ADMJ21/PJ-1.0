@@ -21,7 +21,8 @@ public class Libros  implements java.io.Serializable {
     public Libros() {
     }
 
-    public Libros(String nombre, String genero, Boolean estado, String categoria, Set<Prestamos> prestamoses) {
+    public Libros(Integer idLibros, String nombre, String genero, Boolean estado, String categoria, Set<Prestamos> prestamoses) {
+       this.idLibros = idLibros;
        this.nombre = nombre;
        this.genero = genero;
        this.estado = estado;

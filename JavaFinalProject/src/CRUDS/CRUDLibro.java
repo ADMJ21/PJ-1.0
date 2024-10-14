@@ -21,13 +21,13 @@ import org.hibernate.criterion.Restrictions;
  * @author Angel
  */
 public class CRUDLibro {
-    public static boolean insertar(String Genero, Integer Cantidad){
+    public static boolean insertar(String Nombre, String Genero, Boolean Estado, String Categoria){
         boolean     flag=false;
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Libros.class);
         //Aqui cambian por el nombre que se tiene en pojos, pero la que dice java
-        criteria.add(Restrictions.eq("genero", Genero));
+        criteria.add(Restrictions.eq("nombre", Genero));
         //Aqui lo deje que el No. de habitación sea la condicion
         Libros insrt = (Libros)criteria.uniqueResult();
         Transaction transactions = null;
@@ -35,8 +35,9 @@ public class CRUDLibro {
              transactions = session.beginTransaction();
              if(insrt==null){
                  insrt = new Libros();
+                 insrt.setNombre(Nombre);
                  insrt.setGenero(Genero);
-                 insrt.setCantidad(Cantidad);
+                 insrt.setCategoria(Categoria);
                  insrt.setEstado(true);
                  
                  session.save(insrt);
@@ -58,7 +59,7 @@ public class CRUDLibro {
         return flag;
     }
    
-   public static boolean Modificar(Integer Id_Libro, String Genero, Integer Cantidad){
+   public static boolean Modificar(Integer Id_Libro, String Nombre, String Genero, Boolean Estado, String Categoria){
         boolean     flag=false;
         
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -71,8 +72,9 @@ public class CRUDLibro {
          try{
              transactions = session.beginTransaction();
              if(update !=null){
+                 update.setNombre(Nombre);
                  update.setGenero(Genero);
-                 update.setCantidad(Cantidad);
+                 update.setCategoria(Categoria);
                  session.save(update);
                                   
                  flag=true;
@@ -136,8 +138,9 @@ public class CRUDLibro {
         criteria.add(Restrictions.eq("estados",true));
             criteria.setProjection(Projections.projectionList()
             .add(Projections.property("idLibros"))
+            .add(Projections.property("nombre"))
             .add(Projections.property("genero"))
-            .add(Projections.property("cantidad"))
+            .add(Projections.property("categoria"))
             );
             criteria.addOrder(Order.desc("idLibros"));
             lst = criteria.list();

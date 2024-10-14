@@ -18,7 +18,8 @@ public class Prestamos  implements java.io.Serializable {
     public Prestamos() {
     }
 
-    public Prestamos(Cliente cliente, Libros libros, String fecha, Boolean estado) {
+    public Prestamos(Integer idPrestamos, Cliente cliente, Libros libros, String fecha, Boolean estado) {
+       this.idPrestamos = idPrestamos;
        this.cliente = cliente;
        this.libros = libros;
        this.fecha = fecha;

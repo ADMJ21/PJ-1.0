@@ -22,7 +22,8 @@ public class Cliente  implements java.io.Serializable {
     public Cliente() {
     }
 
-    public Cliente(String nombreCliente, String telefonoCliente, String emailCliente, Integer edad, Boolean estados, Set<Prestamos> prestamoses) {
+    public Cliente(Integer idCliente, String nombreCliente, String telefonoCliente, String emailCliente, Integer edad, Boolean estados, Set<Prestamos> prestamoses) {
+       this.idCliente = idCliente;
        this.nombreCliente = nombreCliente;
        this.telefonoCliente = telefonoCliente;
        this.emailCliente = emailCliente;
