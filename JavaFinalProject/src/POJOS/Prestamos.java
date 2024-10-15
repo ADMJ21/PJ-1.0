@@ -1,5 +1,5 @@
 package POJOS;
-// Generated 13/10/2024 07:11:05 PM by Hibernate Tools 4.3.1
+// Generated 15/10/2024 12:30:07 PM by Hibernate Tools 4.3.1
 
 
 
@@ -14,16 +14,17 @@ public class Prestamos  implements java.io.Serializable {
      private Libros libros;
      private String fecha;
      private Boolean estado;
+     private String clave;
 
     public Prestamos() {
     }
 
-    public Prestamos(Integer idPrestamos, Cliente cliente, Libros libros, String fecha, Boolean estado) {
-       this.idPrestamos = idPrestamos;
+    public Prestamos(Cliente cliente, Libros libros, String fecha, Boolean estado, String clave) {
        this.cliente = cliente;
        this.libros = libros;
        this.fecha = fecha;
        this.estado = estado;
+       this.clave = clave;
     }
    
     public Integer getIdPrestamos() {
@@ -60,6 +61,13 @@ public class Prestamos  implements java.io.Serializable {
     
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+    public String getClave() {
+        return this.clave;
+    }
+    
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
 

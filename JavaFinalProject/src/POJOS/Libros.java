@@ -1,5 +1,5 @@
 package POJOS;
-// Generated 13/10/2024 07:11:05 PM by Hibernate Tools 4.3.1
+// Generated 15/10/2024 12:30:07 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -21,8 +21,7 @@ public class Libros  implements java.io.Serializable {
     public Libros() {
     }
 
-    public Libros(Integer idLibros, String nombre, String genero, Boolean estado, String categoria, Set<Prestamos> prestamoses) {
-       this.idLibros = idLibros;
+    public Libros(String nombre, String genero, Boolean estado, String categoria, Set<Prestamos> prestamoses) {
        this.nombre = nombre;
        this.genero = genero;
        this.estado = estado;
