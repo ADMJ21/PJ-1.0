@@ -23,25 +23,27 @@ import org.hibernate.criterion.Restrictions;
  * @author Angel
  */
 public class CRUDPrestamo {
-    public static boolean insertar(Integer idPrestamos, Cliente cliente, Libros libros, String fecha){
+    public static boolean insertar(String Fecha, String Clave, Integer Id_Cliente, Integer Id_Libros){
         boolean     flag=false;
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Prestamos.class);
-        //Aqui cambian por el nombre que se tiene en pojos, pero la que dice java
-        criteria.add(Restrictions.eq("emailPrestamos", Email));
-        //Aqui lo deje que el No. de habitación sea la condicion
+        criteria.add(Restrictions.eq("clave", Clave));
         Prestamos insrt = (Prestamos)criteria.uniqueResult();
         Transaction transactions = null;
          try{
              transactions = session.beginTransaction();
              if(insrt==null){
                  insrt = new Prestamos();
-                 insrt.setNombrePrestamos(Nombre);
-                 insrt.setTelefonoPrestamos(Telefono);
-                 insrt.setEmailPrestamos(Email);
-                 insrt.setEdad(Edad);
-                 insrt.setEstados(true);
+                    Cliente cliente = new Cliente ();
+                    cliente.setIdCliente(Id_Cliente);
+                 insrt.setCliente(cliente);
+                    Libros libros = new Libros ();
+                    libros.setIdLibros(Id_Libros);
+                 insrt.setLibros(libros);
+                 insrt.setFecha(Fecha);
+                 insrt.setClave(Clave);
+                 insrt.setEstado(true);
                  
                  session.save(insrt);
                  flag=true;
@@ -56,30 +58,32 @@ public class CRUDPrestamo {
              transactions.rollback();
              
          }finally{
-             //el finally ejecuta el codigo que está en el bloque, si o si
              session.close();
          }
         return flag;
     }
    
-   public static boolean Modificar(Integer Id_Prestamos, String Nombre, String Telefono, String Email, Integer Edad){
+   public static boolean Modificar(Integer Id_Prestamos, String Fecha, String Clave, Integer Id_Cliente, Integer Id_Libros){
         boolean     flag=false;
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Prestamos.class);
-        //Aqui cambian por el nombre que se tiene en pojos, pero la que dice java
         criteria.add(Restrictions.eq("idPrestamos", Id_Prestamos));
-        //Aqui lo deje que el No. de habitación sea la condicion
         Prestamos update = (Prestamos)criteria.uniqueResult();
         Transaction transactions = null;
          try{
              transactions = session.beginTransaction();
              if(update !=null){
-                 update.setNombrePrestamos(Nombre);
-                 update.setTelefonoPrestamos(Telefono);
-                 update.setEmailPrestamos(Email);
-                 update.setEdad(Edad);
-                 session.save(update);
+                    Cliente cliente = new Cliente();
+                    cliente.setIdCliente(Id_Cliente);
+                 update.setCliente(cliente);
+                    Libros libros = new Libros();
+                    libros.setIdLibros(Id_Libros);
+                 update.setLibros(libros);
+                 update.setFecha(Fecha);
+                 update.setClave(Clave);
+                 
+                session.save(update);
                                   
                  flag=true;
                  
@@ -93,7 +97,6 @@ public class CRUDPrestamo {
              transactions.rollback();
              
          }finally{
-             //el finally ejecuta el codigo que está en el bloque, si o si
              session.close();
          }
         return flag;
@@ -104,15 +107,13 @@ public class CRUDPrestamo {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Prestamos.class);
-        //Aqui cambian por el nombre que se tiene en pojos, pero la que dice java
         criteria.add(Restrictions.eq("idPrestamos", Id_Prestamos));
-        //Aqui lo deje que el No. de habitación sea la condicion
         Prestamos update = (Prestamos)criteria.uniqueResult();
         Transaction transactions = null;
          try{
              transactions = session.beginTransaction();
              if(update !=null){
-                 update.setEstados(false);
+                 update.setEstado(false);
                  session.save(update);
                                   
                  flag=true;
@@ -127,7 +128,6 @@ public class CRUDPrestamo {
              transactions.rollback();
              
          }finally{
-             //el finally ejecuta el codigo que está en el bloque, si o si
              session.close();
          }
         return flag;
@@ -140,10 +140,14 @@ public class CRUDPrestamo {
         session.beginTransaction();
         Criteria criteria = session.createCriteria(Prestamos.class);
         criteria.add(Restrictions.eq("estados",true));
+        criteria.createAlias("cliente", "c");
+        criteria.createAlias("libros", "l");
             criteria.setProjection(Projections.projectionList()
             .add(Projections.property("idPrestamos"))
-            
-            .add(Projections.property("fecha"))            
+            .add(Projections.property("c.nombreCliente"))
+            .add(Projections.property("l.nombre"))
+            .add(Projections.property("fecha"))      
+            .add(Projections.property("clave"))
                     );
             criteria.addOrder(Order.desc("idPrestamos"));
             lst = criteria.list();

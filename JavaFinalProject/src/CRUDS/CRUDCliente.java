@@ -26,9 +26,7 @@ public class CRUDCliente {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Cliente.class);
-        //Aqui cambian por el nombre que se tiene en pojos, pero la que dice java
         criteria.add(Restrictions.eq("emailCliente", Email));
-        //Aqui lo deje que el No. de habitación sea la condicion
         Cliente insrt = (Cliente)criteria.uniqueResult();
         Transaction transactions = null;
          try{
@@ -54,7 +52,6 @@ public class CRUDCliente {
              transactions.rollback();
              
          }finally{
-             //el finally ejecuta el codigo que está en el bloque, si o si
              session.close();
          }
         return flag;
@@ -65,9 +62,7 @@ public class CRUDCliente {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Cliente.class);
-        //Aqui cambian por el nombre que se tiene en pojos, pero la que dice java
         criteria.add(Restrictions.eq("idCliente", Id_Cliente));
-        //Aqui lo deje que el No. de habitación sea la condicion
         Cliente update = (Cliente)criteria.uniqueResult();
         Transaction transactions = null;
          try{
@@ -102,9 +97,7 @@ public class CRUDCliente {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Cliente.class);
-        //Aqui cambian por el nombre que se tiene en pojos, pero la que dice java
         criteria.add(Restrictions.eq("idCliente", Id_Cliente));
-        //Aqui lo deje que el No. de habitación sea la condicion
         Cliente update = (Cliente)criteria.uniqueResult();
         Transaction transactions = null;
          try{
@@ -125,7 +118,6 @@ public class CRUDCliente {
              transactions.rollback();
              
          }finally{
-             //el finally ejecuta el codigo que está en el bloque, si o si
              session.close();
          }
         return flag;

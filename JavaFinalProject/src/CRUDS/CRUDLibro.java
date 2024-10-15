@@ -26,9 +26,7 @@ public class CRUDLibro {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Libros.class);
-        //Aqui cambian por el nombre que se tiene en pojos, pero la que dice java
         criteria.add(Restrictions.eq("nombre", Genero));
-        //Aqui lo deje que el No. de habitación sea la condicion
         Libros insrt = (Libros)criteria.uniqueResult();
         Transaction transactions = null;
          try{
@@ -53,7 +51,6 @@ public class CRUDLibro {
              transactions.rollback();
              
          }finally{
-             //el finally ejecuta el codigo que está en el bloque, si o si
              session.close();
          }
         return flag;
@@ -64,9 +61,7 @@ public class CRUDLibro {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Libros.class);
-        //Aqui cambian por el nombre que se tiene en pojos, pero la que dice java
         criteria.add(Restrictions.eq("idLibros", Id_Libro));
-        //Aqui lo deje que el No. de habitación sea la condicion
         Libros update = (Libros)criteria.uniqueResult();
         Transaction transactions = null;
          try{
@@ -89,7 +84,6 @@ public class CRUDLibro {
              transactions.rollback();
              
          }finally{
-             //el finally ejecuta el codigo que está en el bloque, si o si
              session.close();
          }
         return flag;
@@ -100,9 +94,7 @@ public class CRUDLibro {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Libros.class);
-        //Aqui cambian por el nombre que se tiene en pojos, pero la que dice java
         criteria.add(Restrictions.eq("idLibros", Id_Libro));
-        //Aqui lo deje que el No. de habitación sea la condicion
         Libros update = (Libros)criteria.uniqueResult();
         Transaction transactions = null;
          try{
@@ -123,7 +115,6 @@ public class CRUDLibro {
              transactions.rollback();
              
          }finally{
-             //el finally ejecuta el codigo que está en el bloque, si o si
              session.close();
          }
         return flag;
