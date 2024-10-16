@@ -5,7 +5,7 @@
  */
 package CRUDS;
 
-import HIBERNATEUtil.HibernateUtil;
+import Hibernate_Util.HibernateUtil;
 import POJOS.Cliente;
 import java.util.List;
 import org.hibernate.Criteria;
