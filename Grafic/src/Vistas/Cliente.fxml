@@ -35,7 +35,7 @@
                   <Font name="Imprint MT Shadow" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="212.0" layoutY="6.0" text="Regristo del Cliente">
+            <Label layoutX="212.0" layoutY="6.0" text="Registro del Cliente">
                <font>
                   <Font name="Imprint MT Shadow" size="44.0" />
                </font>
