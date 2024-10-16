@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="614.0" prefWidth="809.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.Controlador_Clientes">
+    <stylesheets>
+        <URL value="@Controlador_Cliente.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="587.0" prefWidth="783.0">
+         <children>
+            <Label layoutX="23.0" layoutY="81.0" text="Nombre:">
+               <font>
+                  <Font name="Imprint MT Shadow" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="502.0" layoutY="136.0" text="Teléfono:">
+               <font>
+                  <Font name="Imprint MT Shadow" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="136.0" text="Correo Electrónico:">
+               <font>
+                  <Font name="Imprint MT Shadow" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="599.0" layoutY="81.0" text="Edad:">
+               <font>
+                  <Font name="Imprint MT Shadow" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="212.0" layoutY="6.0" text="Regristo del Cliente">
+               <font>
+                  <Font name="Imprint MT Shadow" size="44.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TXT_Nombre" layoutX="94.0" layoutY="75.0" prefHeight="31.0" prefWidth="464.0">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TXT_Correo" layoutX="166.0" layoutY="130.0" prefHeight="31.0" prefWidth="276.0">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TXT_Telefono" layoutX="582.0" layoutY="130.0" prefHeight="31.0" prefWidth="183.0">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TXT_Edad" layoutX="650.0" layoutY="75.0" prefHeight="31.0" prefWidth="112.0">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </TextField>
+            <TableView fx:id="Muestra_Todo" layoutX="14.0" layoutY="186.0" prefHeight="320.0" prefWidth="760.0">
+              <columns>
+                <TableColumn fx:id="Colum_Id" prefWidth="78.0" text="Id_Cliente" />
+                <TableColumn fx:id="Colum_Nombre" minWidth="4.0" prefWidth="311.0" text="Nombre" />
+                  <TableColumn fx:id="Colum_Correo" prefWidth="186.0" text="Correo Electrónico" />
+                  <TableColumn fx:id="Colum_Telefono" prefWidth="112.0" text="Teléfono" />
+                  <TableColumn fx:id="Colum_Edad" prefWidth="72.0" text="Edad" />
+              </columns>
+            </TableView>
+            <Button layoutX="75.0" layoutY="527.0" mnemonicParsing="false" style="-fx-background-color: Green;" text="Guardar" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="206.0" layoutY="527.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Modificar">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="346.0" layoutY="527.0" mnemonicParsing="false" style="-fx-background-color: Red;" text="Eliminar" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="477.0" layoutY="527.0" mnemonicParsing="false" style="-fx-background-color: Blue;" text="Cancelar Modificar/Eliminar" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

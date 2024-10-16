@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.Controlador_Personas">
+    <stylesheets>
+        <URL value="@Controlador_Prestamos.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="3.0" layoutY="7.0" prefHeight="587.0" prefWidth="897.0">
+         <children>
+            <Label layoutX="73.0" layoutY="81.0" text="Nombre del Cliente:">
+               <font>
+                  <Font name="Imprint MT Shadow" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="518.0" layoutY="194.0" text="Clave:">
+               <font>
+                  <Font name="Imprint MT Shadow" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="73.0" layoutY="194.0" text="Fecha:">
+               <font>
+                  <Font name="Imprint MT Shadow" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="250.0" layoutY="7.0" text="Registro de Prestamo">
+               <font>
+                  <Font name="Imprint MT Shadow" size="44.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TXT_Fecha" layoutX="138.0" layoutY="188.0" prefHeight="31.0" prefWidth="172.0">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TXT_Clave" layoutX="578.0" layoutY="188.0" prefHeight="31.0" prefWidth="202.0">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </TextField>
+            <TableView fx:id="Muestra_Todo" layoutX="23.0" layoutY="234.0" prefHeight="275.0" prefWidth="854.0">
+               <columns>
+                  <TableColumn fx:id="Colum_Id" prefWidth="101.0" text="Id_Prestamo" />
+                  <TableColumn fx:id="Colum_Cliente" minWidth="4.0" prefWidth="283.0" text="Nombre del Cliente" />
+                  <TableColumn fx:id="Colum_Libro" prefWidth="239.0" text="Nombre del Libro" />
+                  <TableColumn fx:id="Colum_Fecha" prefWidth="111.0" text="Feha" />
+                  <TableColumn fx:id="Colum_Clave" prefWidth="119.0" text="Clave" />
+               </columns>
+            </TableView>
+            <Button layoutX="145.0" layoutY="527.0" mnemonicParsing="false" style="-fx-background-color: Green;" text="Guardar" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="276.0" layoutY="527.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Modificar">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="416.0" layoutY="527.0" mnemonicParsing="false" style="-fx-background-color: Red;" text="Eliminar" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="547.0" layoutY="527.0" mnemonicParsing="false" style="-fx-background-color: Blue;" text="Cancelar Modificar/Eliminar" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="73.0" layoutY="131.0" text="Nombre del Libro:">
+               <font>
+                  <Font name="Imprint MT Shadow" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="Combo_Cliente" layoutX="240.0" layoutY="75.0" prefHeight="31.0" prefWidth="539.0" />
+            <ComboBox fx:id="Combo_Libro" layoutX="241.0" layoutY="125.0" prefHeight="31.0" prefWidth="539.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

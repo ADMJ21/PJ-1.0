@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Controlador.Controlador_Libros">
+    <stylesheets>
+        <URL value="@Controlador_Libros.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="12.0" layoutY="12.0" prefHeight="587.0" prefWidth="783.0">
+         <children>
+            <Label layoutX="23.0" layoutY="81.0" text="Nombre del Libro:">
+               <font>
+                  <Font name="Imprint MT Shadow" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="372.0" layoutY="136.0" text="Categoria:">
+               <font>
+                  <Font name="Imprint MT Shadow" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="136.0" text="Género:">
+               <font>
+                  <Font name="Imprint MT Shadow" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="212.0" layoutY="6.0" text="Regristo de Libro">
+               <font>
+                  <Font name="Imprint MT Shadow" size="44.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TXT_Nombre" layoutX="164.0" layoutY="75.0" prefHeight="31.0" prefWidth="576.0">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TXT_Genero" layoutX="88.0" layoutY="130.0" prefHeight="31.0" prefWidth="172.0">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TXT_Categoria" layoutX="448.0" layoutY="130.0" prefHeight="31.0" prefWidth="295.0">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </TextField>
+            <TableView fx:id="Muestra_Todo" layoutX="23.0" layoutY="189.0" prefHeight="320.0" prefWidth="739.0">
+               <columns>
+                  <TableColumn fx:id="Colum_Id" prefWidth="78.0" text="Id_Libro" />
+                  <TableColumn fx:id="Colum_Nombre" minWidth="4.0" prefWidth="289.0" text="Nombre del Libro" />
+                  <TableColumn fx:id="Colum_Genero" prefWidth="158.0" text="Género" />
+                  <TableColumn fx:id="Colum_Categoria" prefWidth="213.0" text="Categoria" />
+               </columns>
+            </TableView>
+            <Button layoutX="75.0" layoutY="527.0" mnemonicParsing="false" style="-fx-background-color: Green;" text="Guardar" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="206.0" layoutY="527.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Modificar">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="346.0" layoutY="527.0" mnemonicParsing="false" style="-fx-background-color: Red;" text="Eliminar" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="477.0" layoutY="527.0" mnemonicParsing="false" style="-fx-background-color: Blue;" text="Cancelar Modificar/Eliminar" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
