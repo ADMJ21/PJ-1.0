@@ -26,7 +26,7 @@ public class CRUDLibro {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Libros.class);
-        criteria.add(Restrictions.eq("nombre", Genero));
+        criteria.add(Restrictions.eq("nombre", Nombre));
         Libros insrt = (Libros)criteria.uniqueResult();
         Transaction transactions = null;
          try{
