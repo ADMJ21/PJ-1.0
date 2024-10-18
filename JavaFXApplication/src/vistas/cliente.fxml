@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controler.ClienteController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.ClienteController">
     <stylesheets>
         <URL value="@controlador_cliente.css" />
     </stylesheets>
@@ -20,7 +20,7 @@
                   <Font name="Modern No. 20" size="54.0" />
                </font>
             </Label>
-            <Button layoutX="23.0" layoutY="473.0" mnemonicParsing="false" onAction="#Abrir_Cliente" text="Guardar">
+            <Button layoutX="23.0" layoutY="473.0" mnemonicParsing="false" onAction="#insertar" text="Guardar">
                <font>
                   <Font name="Bodoni MT" size="20.0" />
                </font>
@@ -65,7 +65,7 @@
                   <Font name="Modern No. 20" size="18.0" />
                </font>
             </Label>
-            <TableView fx:id="Mostrar_Todo" layoutX="33.0" layoutY="200.0" prefHeight="256.0" prefWidth="811.0">
+            <TableView fx:id="Mostrar_Todo" layoutX="33.0" layoutY="200.0" onMouseClicked="#Selecionar_Datos" prefHeight="256.0" prefWidth="811.0">
               <columns>
                 <TableColumn fx:id="Colum_Id" text="Id Cliente" />
                 <TableColumn fx:id="Colum_Nombre" prefWidth="234.0" text="Nombre del Cliente" />
@@ -74,22 +74,22 @@
                   <TableColumn fx:id="Colum_Edad" prefWidth="105.0" text="Edad" />
               </columns>
             </TableView>
-            <Button layoutX="144.0" layoutY="474.0" mnemonicParsing="false" onAction="#Abrir_Cliente" text="Modificar">
+            <Button layoutX="144.0" layoutY="474.0" mnemonicParsing="false" onAction="#modifcar" text="Modificar">
                <font>
                   <Font name="Bodoni MT" size="20.0" />
                </font>
             </Button>
-            <Button layoutX="270.0" layoutY="474.0" mnemonicParsing="false" onAction="#Abrir_Cliente" text="Eliminar">
+            <Button layoutX="270.0" layoutY="474.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar">
                <font>
                   <Font name="Bodoni MT" size="20.0" />
                </font>
             </Button>
-            <Button layoutX="389.0" layoutY="474.0" mnemonicParsing="false" onAction="#Abrir_Cliente" text="Cancelar Modificar/Eliminar">
+            <Button layoutX="389.0" layoutY="474.0" mnemonicParsing="false" text="Cancelar Modificar/Eliminar">
                <font>
                   <Font name="Bodoni MT" size="20.0" />
                </font>
             </Button>
-            <Button layoutX="668.0" layoutY="473.0" mnemonicParsing="false" onAction="#Abrir_Cliente" text="Calcular Estadística">
+            <Button layoutX="668.0" layoutY="473.0" mnemonicParsing="false" text="Calcular Estadística">
                <font>
                   <Font name="Bodoni MT" size="20.0" />
                </font>
