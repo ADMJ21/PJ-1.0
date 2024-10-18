@@ -21,6 +21,7 @@ public class cliente {
         this.idCliente = idCliente;
         this.nombreCliente = nombreCliente;
         this.telefonoCliente = telefonoCliente;
+        this.emailCliente = emailCliente;
         this.edad = edad;
     }
     /**

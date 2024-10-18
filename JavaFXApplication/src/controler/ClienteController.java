@@ -71,7 +71,12 @@ public class ClienteController implements Initializable {
         listcliente=FXCollections.observableArrayList();
         for(Iterator it = CRUDS.CRUDCliente.universo().iterator(); it.hasNext();){
             Object[] item = (Object[]) it.next();
-            listcliente.add(new cliente((Integer) item[0], (String) item[1],(String) item[2], (String) item[3], (Integer) item[4]));
+            listcliente.add(new cliente(
+                    (Integer) item[0], 
+                    (String) item[1],
+                    (String) item[2], 
+                    (String) item[3], 
+                    (Integer) item[4]));
             //Se mantiene los valores que se encuentran en CRUDS, en Universo
         }
         this.Colum_Id.setCellValueFactory(new PropertyValueFactory("idCliente"));

@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controler.LibroController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.LibroController">
     <stylesheets>
         <URL value="@controlador_libro.css" />
     </stylesheets>
@@ -57,7 +57,7 @@
             </Label>
             <TableView fx:id="Mostrar_Todo" layoutX="13.0" layoutY="200.0" onMouseClicked="#Selecionar_Datos" prefHeight="256.0" prefWidth="849.0">
                <columns>
-                  <TableColumn fx:id="Colum_Id" text="Id Cliente" />
+                  <TableColumn fx:id="Colum_Id" text="Id Libro" />
                   <TableColumn fx:id="Colum_Nombre" prefWidth="322.0" text="Nombre del Libro" />
                   <TableColumn fx:id="Colum_Genero" prefWidth="105.0" text="Género" />
                   <TableColumn fx:id="Colum_Categoria" prefWidth="341.0" text="Categoría" />

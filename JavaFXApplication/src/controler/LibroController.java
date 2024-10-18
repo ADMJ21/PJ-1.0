@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controler;
 
 import java.net.URL;
@@ -61,15 +57,19 @@ public class LibroController implements Initializable {
     
     public void mostrar(){
         listLibro=FXCollections.observableArrayList();
-        for(Iterator it = CRUDS.CRUDCliente.universo().iterator(); it.hasNext();){
+        for(Iterator it = CRUDS.CRUDLibro.universo().iterator(); it.hasNext();){
             Object[] item = (Object[]) it.next();
-            listLibro.add(new libro((Integer) item[0], (String) item[1],(String) item[2], (String) item[3]));
+            listLibro.add(new libro(
+                    (Integer) item[0], 
+                    (String) item[1],
+                    (String) item[2], 
+                    (String) item[3]));
             //Se mantiene los valores que se encuentran en CRUDS, en Universo
         }
-        this.Colum_Id.setCellValueFactory(new PropertyValueFactory("idCliente"));
-        this.Colum_Nombre.setCellValueFactory(new PropertyValueFactory("nombreCliente"));
-        this.Colum_Genero.setCellValueFactory(new PropertyValueFactory("telefonoCliente"));
-        this.Colum_Categoria.setCellValueFactory(new PropertyValueFactory("emailCliente"));
+        this.Colum_Id.setCellValueFactory(new PropertyValueFactory("idLibros"));
+        this.Colum_Nombre.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.Colum_Genero.setCellValueFactory(new PropertyValueFactory("genero"));
+        this.Colum_Categoria.setCellValueFactory(new PropertyValueFactory("categoria"));
             Mostrar_Todo.setItems(listLibro);
     }
     
@@ -83,7 +83,7 @@ public class LibroController implements Initializable {
     }
     
     @FXML
-    private void insertar(ActionEvent event) {
+    private void insertar() {
         try{
         String nombre, genero, categoria;
         nombre= TXT_Nombre.getText();
@@ -120,7 +120,7 @@ public class LibroController implements Initializable {
     }
 
     @FXML
-    private void modificar(ActionEvent event) {
+    private void modificar() {
         try{
         String nombre, genero, categoria;
         nombre= TXT_Nombre.getText();
@@ -132,7 +132,7 @@ public class LibroController implements Initializable {
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             alerta.setTitle("Información");
             alerta.setHeaderText(null);
-            alerta.setContentText("Registro Ingresado");
+            alerta.setContentText("Registro Modificado");
             
             alerta.showAndWait();
             //Muestra una alerta que los datos fueron ingresados
@@ -140,7 +140,7 @@ public class LibroController implements Initializable {
             Alert alerta = new Alert(Alert.AlertType.ERROR);
             alerta.setTitle("Error");
             alerta.setHeaderText(null);
-            alerta.setContentText("Registro no Ingresado");
+            alerta.setContentText("Registro no Modificado");
             
             alerta.showAndWait();
             //Muestra una alerta que los datos fueron ingresados
@@ -157,7 +157,7 @@ public class LibroController implements Initializable {
     }
 
     @FXML
-    private void eliminar(ActionEvent event) {
+    private void eliminar() {
         try{
         if(CRUDS.CRUDLibro.Eliminar(getIdlibro())){
             mostrar();
