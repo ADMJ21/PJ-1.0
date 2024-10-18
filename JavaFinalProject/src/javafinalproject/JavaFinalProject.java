@@ -16,6 +16,10 @@ public class JavaFinalProject {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+//        Cruds.CrudCliente.update(1, "9876", "98743", "VerdaderaCasa");
+        CRUDS.CRUDCliente.insertar("Costumerxd", 
+                "568225468", "tumama@gmail.com", 35);
+//        System.out.println("Anular="+Cruds.CrudCliente.eliminar(2));
     }
     
 }
