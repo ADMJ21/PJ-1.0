@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,8 +8,93 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.ClienteController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controler.ClienteController">
     <stylesheets>
-        <URL value="@controlador_cliente.css"/>
+        <URL value="@controlador_cliente.css" />
     </stylesheets>
+   <children>
+      <Pane layoutX="4.0" layoutY="4.0" prefHeight="534.0" prefWidth="876.0">
+         <children>
+            <Label layoutX="270.0" layoutY="14.0" text="Registro de Clientes">
+               <font>
+                  <Font name="Modern No. 20" size="54.0" />
+               </font>
+            </Label>
+            <Button layoutX="23.0" layoutY="473.0" mnemonicParsing="false" onAction="#Abrir_Cliente" text="Guardar">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="52.0" layoutY="99.0" text="Nombre: ">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="335.0" layoutY="147.0" text="Correo Electrónico:">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TXT_Nombre" layoutX="122.0" layoutY="92.0" prefHeight="32.0" prefWidth="480.0">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="654.0" layoutY="98.0" text="Edad:">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TXT_Edad" layoutX="706.0" layoutY="91.0" prefHeight="32.0" prefWidth="119.0">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TXT_Correo" layoutX="483.0" layoutY="141.0" prefHeight="32.0" prefWidth="342.0">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TXT_Telefono" layoutX="140.0" layoutY="141.0" prefHeight="32.0" prefWidth="154.0">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="52.0" layoutY="147.0" text="Teléfono:">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="Mostrar_Todo" layoutX="33.0" layoutY="200.0" prefHeight="256.0" prefWidth="811.0">
+              <columns>
+                <TableColumn fx:id="Colum_Id" text="Id Cliente" />
+                <TableColumn fx:id="Colum_Nombre" prefWidth="234.0" text="Nombre del Cliente" />
+                  <TableColumn fx:id="Colum_elefono" prefWidth="125.0" text="Teléfono" />
+                  <TableColumn fx:id="Colum_Correo" prefWidth="266.0" text="Correo Electrónico" />
+                  <TableColumn fx:id="Colum_Edad" prefWidth="105.0" text="Edad" />
+              </columns>
+            </TableView>
+            <Button layoutX="144.0" layoutY="474.0" mnemonicParsing="false" onAction="#Abrir_Cliente" text="Modificar">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="270.0" layoutY="474.0" mnemonicParsing="false" onAction="#Abrir_Cliente" text="Eliminar">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="389.0" layoutY="474.0" mnemonicParsing="false" onAction="#Abrir_Cliente" text="Cancelar Modificar/Eliminar">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="668.0" layoutY="473.0" mnemonicParsing="false" onAction="#Abrir_Cliente" text="Calcular Estadística">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

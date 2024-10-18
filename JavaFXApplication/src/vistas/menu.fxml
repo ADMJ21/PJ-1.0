@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,8 +8,34 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.MenuController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="268.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.MenuController">
     <stylesheets>
-        <URL value="@menu.css"/>
+        <URL value="@menu.css" />
     </stylesheets>
+   <children>
+      <Pane layoutY="14.0" prefHeight="373.0" prefWidth="335.0">
+         <children>
+            <Label layoutX="117.0" layoutY="14.0" text="Menú">
+               <font>
+                  <Font name="Modern No. 20" size="54.0" />
+               </font>
+            </Label>
+            <Button layoutX="71.0" layoutY="114.0" mnemonicParsing="false" onAction="#Abrir_Cliente" text="Registro de Clientes">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="76.0" layoutY="187.0" mnemonicParsing="false" onAction="#Abrir_Libros" text="Registro de Libros">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="59.0" layoutY="259.0" mnemonicParsing="false" onAction="#Abrir_Prestamos" text="Registro de Prestamos">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
