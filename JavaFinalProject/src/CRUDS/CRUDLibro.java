@@ -126,7 +126,7 @@ public class CRUDLibro {
     try{
         session.beginTransaction();
         Criteria criteria = session.createCriteria(Libros.class);
-        criteria.add(Restrictions.eq("estados",true));
+        criteria.add(Restrictions.eq("estado",true));
             criteria.setProjection(Projections.projectionList()
             .add(Projections.property("idLibros"))
             .add(Projections.property("nombre"))
