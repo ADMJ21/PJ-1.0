@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,8 +8,80 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.PrestamosController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controler.PrestamosController">
     <stylesheets>
-        <URL value="@prestamos.css"/>
+        <URL value="@prestamos.css" />
     </stylesheets>
+   <children>
+      <Pane layoutX="2.0" layoutY="7.0" prefHeight="612.0" prefWidth="876.0">
+         <children>
+            <Label layoutX="241.0" layoutY="14.0" text="Registro de Prestamos">
+               <font>
+                  <Font name="Modern No. 20" size="54.0" />
+               </font>
+            </Label>
+            <Button layoutX="130.0" layoutY="552.0" mnemonicParsing="false" onAction="#insertar" text="Guardar">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="109.0" text="Nombre del Cliente: ">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="650.0" layoutY="109.0" text="Fecha:">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TXT_Fecha" layoutX="708.0" layoutY="103.0" prefHeight="32.0" prefWidth="147.0">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </TextField>
+            <TableView fx:id="Mostrar_Todo" layoutX="14.0" layoutY="208.0" onMouseClicked="#Selecionar_Datos" prefHeight="326.0" prefWidth="849.0">
+               <columns>
+                  <TableColumn fx:id="Colum_Id" prefWidth="102.0" text="Id Prestamo" />
+                  <TableColumn fx:id="Colum_Cliente" prefWidth="281.0" text="Nombre del Cliente" />
+                  <TableColumn fx:id="Colum_Libro" prefWidth="246.0" text="Nombre del Libro" />
+                  <TableColumn fx:id="Colum_Fecha" prefWidth="116.0" text="Fecha" />
+                  <TableColumn fx:id="Column_Clave" prefWidth="103.0" text="Clave" />
+               </columns>
+            </TableView>
+            <Button layoutX="251.0" layoutY="553.0" mnemonicParsing="false" onAction="#modificar" text="Modificar">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="377.0" layoutY="553.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="496.0" layoutY="553.0" mnemonicParsing="false" text="Cancelar Modificar/Eliminar">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <ComboBox layoutX="169.0" layoutY="104.0" prefHeight="31.0" prefWidth="454.0" />
+            <ComboBox layoutX="169.0" layoutY="154.0" prefHeight="31.0" prefWidth="454.0" />
+            <Label layoutX="14.0" layoutY="159.0" text="Nombre del Libro:">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TXT_Clave" layoutX="708.0" layoutY="154.0" prefHeight="32.0" prefWidth="147.0">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="650.0" layoutY="160.0" text="Clave:">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

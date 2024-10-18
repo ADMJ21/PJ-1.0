@@ -21,7 +21,7 @@ import org.hibernate.criterion.Restrictions;
  * @author Angel
  */
 public class CRUDLibro {
-    public static boolean insertar(String Nombre, String Genero, Boolean Estado, String Categoria){
+    public static boolean insertar(String Nombre, String Genero, String Categoria){
         boolean     flag=false;
         
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -56,7 +56,7 @@ public class CRUDLibro {
         return flag;
     }
    
-   public static boolean Modificar(Integer Id_Libro, String Nombre, String Genero, Boolean Estado, String Categoria){
+   public static boolean Modificar(Integer Id_Libro, String Nombre, String Genero, String Categoria){
         boolean     flag=false;
         
         Session session = HibernateUtil.getSessionFactory().openSession();

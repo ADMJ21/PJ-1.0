@@ -43,7 +43,7 @@ public class ClienteController implements Initializable {
     @FXML
     private TableColumn<?, ?> Colum_Nombre;
     @FXML
-    private TableColumn<?, ?> Colum_elefono;
+    private TableColumn<?, ?> Colum_Telefono;
     @FXML
     private TableColumn<?, ?> Colum_Correo;
     @FXML
@@ -51,6 +51,7 @@ public class ClienteController implements Initializable {
     
     private ObservableList<cliente> listcliente;
     private Integer idPersona;
+    
 
 
     @Override
@@ -75,7 +76,7 @@ public class ClienteController implements Initializable {
         }
         this.Colum_Id.setCellValueFactory(new PropertyValueFactory("idCliente"));
         this.Colum_Nombre.setCellValueFactory(new PropertyValueFactory("nombreCliente"));
-        this.Colum_elefono.setCellValueFactory(new PropertyValueFactory("telefonoCliente"));
+        this.Colum_Telefono.setCellValueFactory(new PropertyValueFactory("telefonoCliente"));
         this.Colum_Correo.setCellValueFactory(new PropertyValueFactory("emailCliente"));
         this.Colum_Edad.setCellValueFactory(new PropertyValueFactory("edad"));
             Mostrar_Todo.setItems(listcliente);
@@ -131,7 +132,7 @@ public class ClienteController implements Initializable {
     }
 
     @FXML
-    public void modifcar(){
+    public void modificar(){
         try{
         String nombre, telefono, correo;
         int edad;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,8 +8,77 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.LibroController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controler.LibroController">
     <stylesheets>
-        <URL value="@controlador_libro.css"/>
+        <URL value="@controlador_libro.css" />
     </stylesheets>
+   <children>
+      <Pane layoutY="7.0" prefHeight="534.0" prefWidth="876.0">
+         <children>
+            <Label layoutX="275.0" layoutY="14.0" text="Registro de Libros">
+               <font>
+                  <Font name="Modern No. 20" size="54.0" />
+               </font>
+            </Label>
+            <Button layoutX="129.0" layoutY="474.0" mnemonicParsing="false" onAction="#insertar" text="Guardar">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="52.0" layoutY="99.0" text="Nombre: ">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="575.0" layoutY="147.0" text="Género:">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TXT_Nombre" layoutX="122.0" layoutY="92.0" prefHeight="32.0" prefWidth="688.0">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TXT_Genero" layoutX="641.0" layoutY="141.0" prefHeight="32.0" prefWidth="169.0">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TXT_Categoria" layoutX="121.0" layoutY="141.0" prefHeight="32.0" prefWidth="422.0">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="36.0" layoutY="147.0" text="Categoría:">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="Mostrar_Todo" layoutX="13.0" layoutY="200.0" onMouseClicked="#Selecionar_Datos" prefHeight="256.0" prefWidth="849.0">
+               <columns>
+                  <TableColumn fx:id="Colum_Id" text="Id Cliente" />
+                  <TableColumn fx:id="Colum_Nombre" prefWidth="322.0" text="Nombre del Libro" />
+                  <TableColumn fx:id="Colum_Genero" prefWidth="105.0" text="Género" />
+                  <TableColumn fx:id="Colum_Categoria" prefWidth="341.0" text="Categoría" />
+               </columns>
+            </TableView>
+            <Button layoutX="250.0" layoutY="475.0" mnemonicParsing="false" onAction="#modificar" text="Modificar">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="376.0" layoutY="475.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="495.0" layoutY="475.0" mnemonicParsing="false" text="Cancelar Modificar/Eliminar">
+               <font>
+                  <Font name="Bodoni MT" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

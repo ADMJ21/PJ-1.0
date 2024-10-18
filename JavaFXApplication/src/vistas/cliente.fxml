@@ -69,12 +69,12 @@
               <columns>
                 <TableColumn fx:id="Colum_Id" text="Id Cliente" />
                 <TableColumn fx:id="Colum_Nombre" prefWidth="234.0" text="Nombre del Cliente" />
-                  <TableColumn fx:id="Colum_elefono" prefWidth="125.0" text="Teléfono" />
+                  <TableColumn fx:id="Colum_Telefono" prefWidth="125.0" text="Teléfono" />
                   <TableColumn fx:id="Colum_Correo" prefWidth="266.0" text="Correo Electrónico" />
                   <TableColumn fx:id="Colum_Edad" prefWidth="105.0" text="Edad" />
               </columns>
             </TableView>
-            <Button layoutX="144.0" layoutY="474.0" mnemonicParsing="false" onAction="#modifcar" text="Modificar">
+            <Button layoutX="144.0" layoutY="474.0" mnemonicParsing="false" onAction="#modificar" text="Modificar">
                <font>
                   <Font name="Bodoni MT" size="20.0" />
                </font>
